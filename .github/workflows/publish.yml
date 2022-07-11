@@ -1,0 +1,52 @@
+name: Publish
+
+on:
+  release:
+    types: [published]
+   workflow_dispatch:
+     inputs:
+       releaseType:
+         description: 'Where to release (test or prod)?'
+         required: true
+         default: 'development'
+         
+jobs:
+  development:
+    
+    name: Deploy to Development
+    environment:
+      name: development
+      
+    runs-on: unbuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+  
+    - run: env
+  
+  test:
+  
+    name: Deploy to Test
+    environment:
+      name: test
+      
+    runs-on: unbuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+  
+    - run: env
+  
+  production:
+  
+    name: Deploy to Production
+    environment:
+      name: production
+      
+    runs-on: unbuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+  
+    - run: env
+  
