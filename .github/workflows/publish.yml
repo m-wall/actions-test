@@ -3,12 +3,12 @@ name: Publish
 on:
   release:
     types: [published]
-   workflow_dispatch:
-     inputs:
-       releaseType:
-         description: 'Where to release (test or prod)?'
-         required: true
-         default: 'development'
+  workflow_dispatch:
+    inputs:
+      releaseType:
+        description: 'Where to release (test or prod)?'
+        required: true
+        default: 'development'
          
 jobs:
   development:
