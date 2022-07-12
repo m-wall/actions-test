@@ -12,7 +12,7 @@ jobs:
   deploy:
     name: Deploy to ${{ github.events.inputs.target_env }}
   
-    runs-on: unbuntu-latest
+    runs-on: ubuntu-latest
     
     environment:
       name: ${{ github.events.inputs.target_env }}
